@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         // Jump
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            if(body.position.y <= 0)
+            if(body.position.y <= -2)
             {
                 body.linearVelocity = new Vector2(body.linearVelocity.x, Input.GetAxis("Vertical") * speed);
             }
