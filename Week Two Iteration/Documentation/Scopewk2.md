@@ -4,3 +4,4 @@
 - Add in hazards 
 - Add a way to finish the stage
 - Add in death
+- Add a character sprite and animations
