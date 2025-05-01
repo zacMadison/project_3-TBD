@@ -16,11 +16,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
         // Controlled by a and d or arrowLeft and arrowRight
-        body.linearVelocity = new Vector2(Input.GetAxis("Horizontal")*speed, body.linearVelocity.y);
+        body.linearVelocity = new Vector2(horizontalInput*speed, body.linearVelocity.y);
 
-        // Jump
-        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && isGrounded())
+        // flip player when moving left-right
+        if(horizontalInput > 0.01f)
+        {
+            transform.localScale = new Vector3(0.5f, 0.5f, 0);
+        } else if (horizontalInput < -0.01f)
+        {
+            transform.localScale = new Vector3(-0.5f, 0.5f, 0);
+        }
+
+        // Jump 
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && isGrounded())
         {
             body.linearVelocity = new Vector2(body.linearVelocity.x, speed);    
         }
