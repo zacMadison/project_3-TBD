@@ -3716,6 +3716,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 418573379874212821, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: fab3078431476444995e6ba13efbe4c2, type: 2}
+    - target: {fileID: 418573379874212821, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
