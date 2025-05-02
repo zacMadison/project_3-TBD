@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slime walking animation_0: -7307365661957863856
+      slime walking animation_1: 7952257498634853552
+      slime walking animation_2: -1772826362726551728
+      slime walking animation_3: -4084671399991416630
+      slime walking animation_4: 4996972285529384837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

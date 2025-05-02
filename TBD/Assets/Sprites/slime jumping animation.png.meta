@@ -372,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slime jumping animation_0: 2915732360537438939
+      slime jumping animation_1: 7030969352752740003
+      slime jumping animation_2: -7032040041913748614
+      slime jumping animation_3: -6409651829834025498
+      slime jumping animation_4: -3889845150993750036
+      slime jumping animation_5: 6642063227675153024
+      slime jumping animation_6: 2081724411902841915
+      slime jumping animation_7: 1194534954381252590
+      slime jumping animation_8: -7815618463938488066
+      slime jumping animation_9: -155462804347162383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
