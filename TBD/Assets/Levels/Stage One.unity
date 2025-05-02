@@ -131,9 +131,9 @@ GameObject:
   - component: {fileID: 679007363}
   - component: {fileID: 679007362}
   - component: {fileID: 679007361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3549,15 +3549,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.17
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.17
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3601,7 +3601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

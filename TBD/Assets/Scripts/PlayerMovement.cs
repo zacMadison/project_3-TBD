@@ -6,23 +6,37 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
+    private Animator anim;
+    private bool grounded;
+    private bool freezeRotation = true;
 
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
         // Controlled by a and d or arrowLeft and arrowRight
-        body.linearVelocity = new Vector2(Input.GetAxis("Horizontal")*speed, body.linearVelocity.y);
+        body.linearVelocity = new Vector2(horizontalInput*speed, body.linearVelocity.y);
+
+        // Flip player for left-right movement
+        if(horizontalInput > 0.01f)
+        {
+            transform.localScale = new Vector3(0.5f, 0.5f, 0);
+        }else if (horizontalInput < -0.01f)
+        {
+            transform.localScale = new Vector3(-0.5f, 0.5f, 0);
+        }
 
         // Jump
-        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && isGrounded())
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && grounded)
         {
-            body.linearVelocity = new Vector2(body.linearVelocity.x, speed);    
+            Jump();
         }
 
         // Dash
@@ -30,11 +44,38 @@ public class PlayerMovement : MonoBehaviour
         {
             body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed * 2, body.linearVelocity.y);
         }
+
+        if (freezeRotation)
+        {
+            body.freezeRotation = true;
+        }
+        else
+        {
+            body.freezeRotation = false;
+        }
+
+        anim.SetBool("walk", horizontalInput != 0);
+        anim.SetBool("grounded", grounded);
     }
 
     private bool isGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
         return raycastHit.collider != null;
+    }
+
+    private void Jump()
+    {
+        body.linearVelocity = new Vector2(body.linearVelocity.x, speed);
+        anim.SetTrigger("jump");
+        grounded = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
 }

@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 1211301758}
   m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,6 +357,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4318921695082307215, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3683447985573970361, guid: 7e626395f3376fb41b9dbc292139a523, type: 3}
+    - target: {fileID: 5590128785589994191, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7226686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590128785589994191, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1265076
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590128785589994191, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.006034255
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590128785589994191, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.003417194
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590128785589994191, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.7199999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590128785589994191, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.1216406
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.12
@@ -399,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278426587607278730, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
