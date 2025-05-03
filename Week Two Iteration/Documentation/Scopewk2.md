@@ -5,3 +5,9 @@
 - Add a way to finish the stage
 - Add in death
 - Add a character sprite and animations
+- Add movement to camera
+
+*Bonus Scope*
+- Walljump
+- Improved Dash
+- Add Animations
