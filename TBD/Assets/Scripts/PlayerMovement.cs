@@ -23,9 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-    horizontalInput = Input.GetAxis("Horizontal");
-        // Controlled by a and d or arrowLeft and arrowRight
-        body.linearVelocity = new Vector2(horizontalInput*speed, body.linearVelocity.y);
+        horizontalInput = Input.GetAxis("Horizontal");
 
         // flip player when moving left-right
         if(horizontalInput > 0.01f)
@@ -48,7 +46,9 @@ public class PlayerMovement : MonoBehaviour
 
         if(wallJumpCooldown > 0.2f)
         {
-            if(onWall() && !isGrounded())
+            // Controlled by a and d or arrowLeft and arrowRight
+            body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
+            if (onWall() && !isGrounded())
             {
                 body.gravityScale = 5;
                 body.linearVelocity = Vector2.zero;
@@ -62,8 +62,7 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
             }
 
-            // Controlled by a and d or arrowLeft and arrowRight
-            body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
+            
         }
         else
         {
@@ -112,11 +111,11 @@ public class PlayerMovement : MonoBehaviour
             body.linearVelocity = new Vector2(body.linearVelocity.x, jumpSpeed);
             anim.SetTrigger("jump");
         } 
-        else if(onWall())
+        else if(onWall() && !isGrounded())
         {
             wallJumpCooldown = 0;
 
-            body.linearVelocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, jumpSpeed);
+            body.linearVelocity = new Vector2(-Mathf.Sign(transform.localScale.x) * horizontalJumpPower, jumpSpeed);
         }
     }
 
