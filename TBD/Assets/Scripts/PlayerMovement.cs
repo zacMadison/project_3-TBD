@@ -1,18 +1,32 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [Tooltip("Player movement and jump speeds")]
+    [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpSpeed;
     [SerializeField] private float horizontalJumpPower;
+    [SerializeField] private float dashSpeed;
+    [Tooltip("--------------OTHER------------------")]
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float startDashTime;
+    [SerializeField] private float startDashCooldown;
+
+    // player body and collider
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
+
+    // wall jump
     private float horizontalInput;
     private float wallJumpCooldown;
+    // ------------------------------
     private Animator anim;
     private bool freezeRotation = true;
 
+    // Dash
+    private float dashCooldown;
+    private float currentDashTime;
 
     private void Awake()
     {
@@ -47,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         if(wallJumpCooldown > 0.2f)
         {
             // Controlled by a and d or arrowLeft and arrowRight
-            body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
+            body.linearVelocity = new Vector2(horizontalInput * movementSpeed, body.linearVelocity.y);
             if (onWall() && !isGrounded())
             {
                 body.gravityScale = 5;
@@ -68,22 +82,26 @@ public class PlayerMovement : MonoBehaviour
         {
             wallJumpCooldown += Time.deltaTime;
         }
-        
 
-        // Dash
-        if(Input.GetKey(KeyCode.Space))
+        if (dashCooldown <= 0)
         {
-            body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed * 2, body.linearVelocity.y);
-        }
-
-        if (freezeRotation)
+            if (Input.GetKey(KeyCode.Space))
+            {
+                StartCoroutine(Dash(Mathf.Sign(transform.localScale.x), body.linearVelocity.y));
+                dashCooldown = startDashCooldown;
+            }
+        } else
         {
-            body.freezeRotation = true;
+                dashCooldown -= Time.deltaTime;
         }
-        else
-        {
-            body.freezeRotation = false;
-        }
+            if (freezeRotation)
+            {
+                body.freezeRotation = true;
+            }
+            else
+            {
+                body.freezeRotation = false;
+            }
 
         anim.SetBool("walk", horizontalInput != 0);
         anim.SetBool("grounded", isGrounded());
@@ -123,4 +141,20 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
+    public IEnumerator Dash(float horizontalDirection, float verticalDirection)
+    {
+        currentDashTime = startDashTime;
+
+        while(currentDashTime > 0)
+        {
+            currentDashTime -= Time.deltaTime;
+
+            body.linearVelocity = new Vector2(horizontalDirection * dashSpeed, verticalDirection);
+
+            yield return null;
+        }
+
+        body.linearVelocity = new Vector2(0f, 0f);
+
+    }   
 }
