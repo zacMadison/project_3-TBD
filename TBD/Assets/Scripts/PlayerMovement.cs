@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                StartCoroutine(Dash(Mathf.Sign(transform.localScale.x), body.linearVelocity.y));
+                StartCoroutine(Dash(Mathf.Sign(transform.localScale.x)));
                 dashCooldown = startDashCooldown;
             }
         } else
@@ -141,20 +141,22 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
-    public IEnumerator Dash(float horizontalDirection, float verticalDirection)
+    public IEnumerator Dash(float horizontalDirection)
     {
         currentDashTime = startDashTime;
+        anim.SetBool("dashEnded", false);
+        anim.SetTrigger("dash");
 
-        while(currentDashTime > 0)
+        while (currentDashTime > 0)
         {
             currentDashTime -= Time.deltaTime;
 
-            body.linearVelocity = new Vector2(horizontalDirection * dashSpeed, verticalDirection);
+            body.linearVelocity = new Vector2(horizontalDirection * dashSpeed, 0);
 
             yield return null;
         }
 
         body.linearVelocity = new Vector2(0f, 0f);
-
+        anim.SetBool("dashEnded", true);
     }   
 }
