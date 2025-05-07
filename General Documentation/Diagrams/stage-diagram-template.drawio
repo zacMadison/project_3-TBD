@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0" version="26.2.14">
+  <diagram name="Page-1" id="tLVsGNrymYzhvwR9tHDa">
+    <mxGraphModel dx="1177" dy="1504" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MozLm_vruIbchS9F232g-2" value="Player" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="240" y="-220" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MozLm_vruIbchS9F232g-4" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#754E17;fillColor=#B27B22;" parent="1" vertex="1">
+          <mxGeometry x="240" y="-121" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MozLm_vruIbchS9F232g-18" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="-260" as="sourcePoint" />
+            <mxPoint x="320" y="-259.55" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bxN8P79J62LEqOBuzccy-9" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="-161" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bxN8P79J62LEqOBuzccy-16" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#754E17;fillColor=#B27B22;" vertex="1" parent="1">
+          <mxGeometry x="200" y="-161" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bxN8P79J62LEqOBuzccy-34" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="400" y="-120" width="80" height="39" as="geometry" />
+        </mxCell>
+        <mxCell id="bxN8P79J62LEqOBuzccy-59" value="Stage Completion" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#FCF9BB;fontSize=7;" vertex="1" parent="1">
+          <mxGeometry x="300" y="-220" width="40" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
