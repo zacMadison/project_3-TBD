@@ -864,6 +864,18 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4318921695082307215, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318921695082307215, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318921695082307215, guid: 397ee5bea725564468445f55973c22db, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318921695082307215, guid: 397ee5bea725564468445f55973c22db, type: 3}
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
