@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-0.5f, 0.5f, 0);
         }
 
-        if(wallJumpCooldown > 0.2f)
+        if(wallJumpCooldown > 0.25f)
         {
             // Controlled by a and d or arrowLeft and arrowRight
             body.linearVelocity = new Vector2(horizontalInput * movementSpeed, body.linearVelocity.y);
