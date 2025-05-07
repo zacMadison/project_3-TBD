@@ -141,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
-    public IEnumerator Dash(float horizontalDirection)
+    private IEnumerator Dash(float horizontalDirection)
     {
         currentDashTime = startDashTime;
         anim.SetBool("dashEnded", false);
