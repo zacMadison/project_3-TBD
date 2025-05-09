@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private GameObject uiCanvas;
     [Tooltip("Player movement and jump speeds")]
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpSpeed;
@@ -39,61 +40,66 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
-        // flip player when moving left-right
-        if(horizontalInput > 0.01f)
+        if (!uiCanvas.GetComponent<UIManager>().isPaused())
         {
-            transform.localScale = new Vector3(0.5f, 0.5f, 0);
-        } else if (horizontalInput < -0.01f)
-        {
-            transform.localScale = new Vector3(-0.5f, 0.5f, 0);
-        }
-
-        // Jump 
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && isGrounded())
-        {
-            transform.localScale = new Vector3(0.5f, 0.5f, 0);
-        }
-        else if (horizontalInput < -0.01f)
-        {
-            transform.localScale = new Vector3(-0.5f, 0.5f, 0);
-        }
-
-        if(wallJumpCooldown > 0.25f)
-        {
-            // Controlled by a and d or arrowLeft and arrowRight
-            body.linearVelocity = new Vector2(horizontalInput * movementSpeed, body.linearVelocity.y);
-            if (onWall() && !isGrounded())
+            // flip player when moving left-right
+            if (horizontalInput > 0.01f)
             {
-                body.gravityScale = 5;
-                body.linearVelocity = Vector2.zero;
+                transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            }
+            else if (horizontalInput < -0.01f)
+            {
+                transform.localScale = new Vector3(-0.5f, 0.5f, 0);
+            }
+
+            // Jump 
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && isGrounded())
+            {
+                transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            }
+            else if (horizontalInput < -0.01f)
+            {
+                transform.localScale = new Vector3(-0.5f, 0.5f, 0);
+            }
+
+            if (wallJumpCooldown > 0.25f)
+            {
+                // Controlled by a and d or arrowLeft and arrowRight
+                body.linearVelocity = new Vector2(horizontalInput * movementSpeed, body.linearVelocity.y);
+                if (onWall() && !isGrounded())
+                {
+                    body.gravityScale = 5;
+                    body.linearVelocity = Vector2.zero;
+                }
+                else
+                {
+                    body.gravityScale = 2.5f;
+                }
+
+                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+                {
+                    Jump();
+                }
+
+
             }
             else
             {
-                body.gravityScale = 2.5f;
+                wallJumpCooldown += Time.deltaTime;
             }
 
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
-                Jump();
-            }
-
-            
-        }
-        else
-        {
-            wallJumpCooldown += Time.deltaTime;
-        }
-
-        if (dashCooldown <= 0)
-        {
-            if (Input.GetKey(KeyCode.Space))
+            if (dashCooldown <= 0)
             {
-                StartCoroutine(Dash(Mathf.Sign(transform.localScale.x)));
-                dashCooldown = startDashCooldown;
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    StartCoroutine(Dash(Mathf.Sign(transform.localScale.x)));
+                    dashCooldown = startDashCooldown;
+                }
             }
-        } else
-        {
+            else
+            {
                 dashCooldown -= Time.deltaTime;
-        }
+            }
             if (freezeRotation)
             {
                 body.freezeRotation = true;
@@ -102,7 +108,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 body.freezeRotation = false;
             }
-
+        }
+        else
+        {
+            body.linearVelocity = Vector2.zero;
+            body.gravityScale = 0f;
+        }
         anim.SetBool("walk", horizontalInput != 0);
         anim.SetBool("grounded", isGrounded());
     }

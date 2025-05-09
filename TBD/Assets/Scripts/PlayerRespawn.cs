@@ -17,7 +17,6 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (currentCheckpoint)
         {
-            anim.SetTrigger("die");
             transform.position = currentCheckpoint.position; // move player to checkpoint
             StartCoroutine(DelayResetTrigger(anim));
             
