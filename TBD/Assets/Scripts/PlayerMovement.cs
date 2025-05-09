@@ -109,11 +109,7 @@ public class PlayerMovement : MonoBehaviour
                 body.freezeRotation = false;
             }
         }
-        else
-        {
-            body.linearVelocity = Vector2.zero;
-            body.gravityScale = 0f;
-        }
+
         anim.SetBool("walk", horizontalInput != 0);
         anim.SetBool("grounded", isGrounded());
     }

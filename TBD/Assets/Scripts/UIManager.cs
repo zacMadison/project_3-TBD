@@ -38,9 +38,26 @@ public class UIManager : MonoBehaviour
     private void PauseGame(bool status)
     {
         pauseScreen.SetActive(status);
+
+        if(status == true)
+        {
+            Time.timeScale = 0;
+        }
+        if(status == false)
+        {
+            Time.timeScale = 1;
+        }
     }
+
+    public void Resume()
+    {
+        paused = false;
+        PauseGame(false);
+    }
+
     public void MainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 

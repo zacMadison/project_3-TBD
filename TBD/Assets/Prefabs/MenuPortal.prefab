@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8391899489911423409}
   - component: {fileID: 3358570403254562895}
   m_Layer: 0
-  m_Name: LevelPortal
+  m_Name: MenuPortal
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

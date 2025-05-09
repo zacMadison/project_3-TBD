@@ -3605,7 +3605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602485479957805413, guid: db562d2278a7ba64eb38e9f9b8d92607, type: 3}
       propertyPath: m_Name
-      value: LevelPortal
+      value: MenuPortal
       objectReference: {fileID: 0}
     - target: {fileID: 7039114325843032003, guid: db562d2278a7ba64eb38e9f9b8d92607, type: 3}
       propertyPath: m_LocalScale.y
@@ -3799,15 +3799,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5948320122774379787, guid: b23059979b68f9942b12057c4503c999, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5948320122774379787, guid: b23059979b68f9942b12057c4503c999, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5948320122774379787, guid: b23059979b68f9942b12057c4503c999, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3905,6 +3905,14 @@ PrefabInstance:
     - target: {fileID: 5735858924775464739, guid: 2f4134edf86c43946b7918ddcc87bac3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680981891749372448, guid: 2f4134edf86c43946b7918ddcc87bac3, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2029021105}
+    - target: {fileID: 7680981891749372448, guid: 2f4134edf86c43946b7918ddcc87bac3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1407712795
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4255,15 +4263,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5948320122774379787, guid: b23059979b68f9942b12057c4503c999, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5948320122774379787, guid: b23059979b68f9942b12057c4503c999, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5948320122774379787, guid: b23059979b68f9942b12057c4503c999, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

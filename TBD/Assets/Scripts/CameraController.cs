@@ -7,6 +7,10 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     private float lookAhead;
 
+    private void Awake()
+    {
+        player = GameObject.Find("Player").GetComponent<Transform>();
+    }
     private void Update()
     {
         transform.position = new Vector3(player.position.x + lookAhead, player.position.y, transform.position.z);
