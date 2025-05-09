@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class EnemyKill : MonoBehaviour
 {
-    [SerializeField] private Animator anim;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GameObject.Find("Player").GetComponent<Animator>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

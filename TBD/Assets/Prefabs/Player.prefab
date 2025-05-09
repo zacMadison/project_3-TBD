@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ceb69530cc98d40b9f4c0af4b4489f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiCanvas: {fileID: 0}
+  uiCanvas: {fileID: 4508411335506785085, guid: 2f4134edf86c43946b7918ddcc87bac3, type: 3}
   movementSpeed: 10
   jumpSpeed: 12
   horizontalJumpPower: 5
