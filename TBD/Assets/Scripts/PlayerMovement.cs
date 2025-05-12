@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     private float dashCooldown;
     private float currentDashTime;
 
+    // Spike
+    private bool isPlayable = true;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -40,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if (!uiCanvas.GetComponent<UIManager>().isPaused())
+        if (!uiCanvas.GetComponent<UIManager>().isPaused() && isPlayable)
         {
             // flip player when moving left-right
             if (horizontalInput > 0.01f)
@@ -162,4 +165,10 @@ public class PlayerMovement : MonoBehaviour
         body.linearVelocity = new Vector2(0f, 0f);
         anim.SetBool("dashEnded", true);
     }   
+
+    public bool isSpike(bool canPlay)
+    {
+        isPlayable = !canPlay;
+        return canPlay;
+    }
 }

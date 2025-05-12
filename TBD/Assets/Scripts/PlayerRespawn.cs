@@ -19,6 +19,7 @@ public class PlayerRespawn : MonoBehaviour
         {
             transform.position = currentCheckpoint.position; // move player to checkpoint
             StartCoroutine(DelayResetTrigger(anim));
+            GetComponent<PlayerMovement>().isSpike(false);
             
         }
 

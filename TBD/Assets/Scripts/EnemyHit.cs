@@ -14,6 +14,7 @@ public class EnemyKill : MonoBehaviour
         // Determine if player hit spike
         if(collision.gameObject.tag == "Player")
         {
+            GameObject.Find("Player").GetComponent<PlayerMovement>().isSpike(true);
             anim.SetTrigger("die");
         }
     }
